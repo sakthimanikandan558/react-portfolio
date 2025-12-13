@@ -59,7 +59,7 @@ const ExperienceSection = () => {
       company: "Pranion Technology Ventures Private Limited",
       period: "April 2024 - Present",
       description:
-        "Working as a Full-Stack Developer, building scalable web applications using React.js, Laravel, and PostgreSQL. Developed admin panels, automated workflows with N8N, and integrated real-time features using Laravel Reverb.",
+        "Working as a Full-Stack Developer, specializing in building enterprise-grade web applications and ERP systems. Led development of responsive, mobile-first UI components using React.js and TypeScript, ensuring seamless user experiences across all devices. Architected and integrated RESTful APIs and third-party services including payment gateways, SMS notifications, and mapping solutions. Developed comprehensive admin panels with Filament and Laravel, implementing role-based access control and real-time data synchronization using WebSockets (Laravel Reverb). Automated complex business workflows with N8N, reducing manual processes by 60%. Leveraged PostgreSQL for robust database design and Redis for caching strategies, significantly improving application performance and scalability.",
     },
   ];
 

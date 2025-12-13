@@ -18,6 +18,10 @@ import {
   SiGit,
   SiFilament,
   SiLivewire,
+  SiDocker,
+  SiTypescript,
+  SiGraphql,
+  SiLinux,
 } from "react-icons/si";
 import { TbBrandVscode, TbBrandReactNative } from "react-icons/tb";
 import { BsFileEarmarkCode } from "react-icons/bs";
@@ -71,6 +75,10 @@ const SkillsSection = () => {
           icon: <SiRedux className="w-4 h-4 text-[#764ABC]" />,
         },
         {
+          name: "TypeScript",
+          icon: <SiTypescript className="w-4 h-4 text-[#3178C6]" />,
+        },
+        {
           name: "Tailwind CSS",
           icon: <SiTailwindcss className="w-4 h-4 text-[#38B2AC]" />,
         },
@@ -79,7 +87,7 @@ const SkillsSection = () => {
           icon: <BsFileEarmarkCode className="w-4 h-4 text-[#E34F26]" />,
         },
         {
-          name: "CSS3",
+          name: "CSS",
           icon: <BsFileEarmarkCode className="w-4 h-4 text-[#1572B6]" />,
         },
       ],
@@ -100,6 +108,10 @@ const SkillsSection = () => {
         {
           name: "RESTful APIs",
           icon: <Server className="w-4 h-4 text-[#00D9FF]" />,
+        },
+        {
+          name: "GraphQL",
+          icon: <SiGraphql className="w-4 h-4 text-[#E10098]" />,
         },
         {
           name: "Eloquent ORM",
@@ -175,12 +187,12 @@ const SkillsSection = () => {
           icon: <SiGit className="w-4 h-4 text-[#0052CC]" />,
         },
         {
-          name: "Formik",
-          icon: <Code2 className="w-4 h-4 text-[#2563EB]" />,
+          name: "Docker",
+          icon: <SiDocker className="w-4 h-4 text-[#2496ED]" />,
         },
         {
-          name: "Axios",
-          icon: <Server className="w-4 h-4 text-[#5A29E4]" />,
+          name: "Linux",
+          icon: <SiLinux className="w-4 h-4 text-[#FCC624]" />,
         },
       ],
     },
@@ -194,12 +206,8 @@ const SkillsSection = () => {
           icon: <Code2 className="w-4 h-4 text-[#FF4081]" />,
         },
         {
-          name: "Google Maps API",
-          icon: <Layout className="w-4 h-4 text-[#4285F4]" />,
-        },
-        {
-          name: "Laravel Passport",
-          icon: <Server className="w-4 h-4 text-[#FF2D20]" />,
+          name: "API Integrations",
+          icon: <Server className="w-4 h-4 text-[#00D9FF]" />,
         },
         {
           name: "Spatie Permissions",

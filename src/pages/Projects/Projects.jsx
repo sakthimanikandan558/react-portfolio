@@ -3,36 +3,31 @@ import { useTransform, motion, useScroll } from "framer-motion";
 import { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 
+import kalyanImg from "../../assets/images/kalyan.jpg";
+import amazeImg from "../../assets/images/amaze-erp.png";
+import caminoImg from "../../assets/images/camino.png";
+
 const projects = [
   {
     title: "Kalyan CLAP - Social Recognition Platform",
     description:
-      "A social media web application for Kalyan Matrimony to recognize and appreciate employee contributions. Built with React.js, Laravel, and PostgreSQL featuring state management with Redux, form handling with Formik, authentication with Laravel Passport, and Spatie roles/permissions.",
-    src: "rock.jpg",
-    link: "https://i.postimg.cc/DwgWTfP0/Annotation-2025-03-19-113338.png",
+      "A social recognition platform for Kalyan Matrimony featuring real-time notifications and live updates using WebSockets. Built with React.js, Laravel, and PostgreSQL, it includes a comprehensive admin panel for user management and role-based access control (RBAC). Key features include interactive feeds, state management with Redux, secure authentication via Passport, and Spatie permissions for granular control.",
+    link: kalyanImg,
     color: "#5196fd",
-    githubLink: "https://github.com/sakthimanikandan558",
-    liveLink: "https://github.com/sakthimanikandan558",
   },
   {
     title: "Amaze ERP - Travel Management System",
     description:
-      " Amaze ERP is a comprehensive travel management system handling customer bookings, trip tracking, billing, and transactions. Developed efficient APIs for the mobile app, implemented N8N workflows for automated messaging, integrated Google Maps APIs, and built reporting modules with XLS/PDF export.",
-    src: "tree.jpg",
-    link: "https://i.postimg.cc/J75CKyrs/Annotation-2025-04-01-203959.png",
+      "A comprehensive ERP solution where I integrated E-Invoice APIs and various 3rd party services for seamless transactions. Developed robust APIs for the customer portal and mobile apps, implemented Cron jobs for automated maintenance, and N8N workflows for messaging. Features include trip tracking, Google Maps integration, and automated billing systems.",
+    link: amazeImg,
     color: "#8f89ff",
-    githubLink: "https://github.com/sakthimanikandan558",
-    liveLink: "https://github.com/sakthimanikandan558",
   },
   {
     title: "Camino - Internal Management System",
     description:
       "An internal management system built with Laravel, Filament, and Livewire for employee timesheet logging, support ticket management, and leave requests. Features include timesheet export with filtering, email functionality, analytics dashboards using Superset, and real-time chat with Laravel Reverb WebSocket.",
-    src: "water.jpg",
-    link: "https://i.postimg.cc/J4jPVFY0/Annotation-2025-04-01-204723.png",
+    link: caminoImg,
     color: "#ff6b6b",
-    githubLink: "https://github.com/sakthimanikandan558",
-    liveLink: "https://github.com/sakthimanikandan558",
   },
 ];
 
@@ -104,8 +99,6 @@ export default function Projects() {
                 progress={scrollYProgress}
                 range={[i * 0.25, 1]}
                 targetScale={targetScale}
-                githubLink={project.githubLink}
-                liveLink={project.liveLink}
               />
             );
           })}
@@ -124,8 +117,6 @@ function Card({
   progress,
   range,
   targetScale,
-  githubLink,
-  liveLink,
 }) {
   const container = useRef(null);
   const scale = useTransform(progress, range, [1, targetScale]);
@@ -155,7 +146,7 @@ function Card({
             <motion.img
               src={url}
               alt={title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-top"
               initial={{ scale: 1 }}
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.4 }}
@@ -195,73 +186,7 @@ function Card({
               </p>
             </div>
 
-            <div className="mt-4 md:mt-auto pt-4">
-              <div className="w-full h-[1px] bg-gray-800 mb-4 md:mb-6" />
 
-              <div className="flex items-center gap-4">
-                {/* GitHub Link */}
-                <motion.a
-                  href={githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2"
-                  whileHover={{ y: -3 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="22"
-                    height="22"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke={color}
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                  </svg>
-                  <span
-                    className="text-xs md:text-sm font-medium"
-                    style={{ color }}
-                  >
-                    Code
-                  </span>
-                </motion.a>
-
-                {/* Live Link */}
-                <motion.a
-                  href={liveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2"
-                  whileHover={{ y: -3 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="22"
-                    height="22"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke={color}
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="2" y1="12" x2="22" y2="12"></line>
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                  </svg>
-                  <span
-                    className="text-xs md:text-sm font-medium"
-                    style={{ color }}
-                  >
-                    Live
-                  </span>
-                </motion.a>
-              </div>
-            </div>
           </div>
         </div>
       </motion.div>
@@ -279,6 +204,4 @@ Card.propTypes = {
   progress: PropTypes.object.isRequired,
   range: PropTypes.array.isRequired,
   targetScale: PropTypes.number.isRequired,
-  githubLink: PropTypes.string.isRequired,
-  liveLink: PropTypes.string.isRequired,
 };
