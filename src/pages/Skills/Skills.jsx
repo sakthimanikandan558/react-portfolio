@@ -222,11 +222,11 @@ const SkillsSection = () => {
   ];
 
   return (
-    <main className="pt-15 lg:pt-0 text-white min-h-screen bg-[#04081A] relative">
+    <main className="pt-0 text-white min-h-screen bg-[#04081A] relative">
       {/* Grid Background */}
       <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none"></div>
 
-      <section className="container mx-auto px-4 py-11 relative z-10">
+      <section className="container mx-auto px-4 md:py-11 py-0 relative z-10">
         <div className="flex justify-center items-center ">
           <IconCloudDemo />
         </div>
