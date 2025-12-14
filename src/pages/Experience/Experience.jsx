@@ -65,7 +65,7 @@ const ExperienceSection = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-b relative overflow-hidden pt-32 pb-20">
+      <div className="min-h-screen bg-gradient-to-b relative overflow-hidden md:pt-32 pt-10 md:pb-20 pb-10">
         {/* Animated gradient background */}
         <div className="absolute inset-0 bg-[#04081A]" />
 

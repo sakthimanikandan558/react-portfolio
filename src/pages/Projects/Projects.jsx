@@ -84,8 +84,8 @@ export default function Projects() {
 
   return (
     <ReactLenis root>
-      <main className="bg-black" ref={container}>
-        <section className="text-white w-full bg-slate-950">
+      <main className="bg-[#04081A]" ref={container}>
+        <section className="text-white w-full bg-[#04081A]">
           {projects.map((project, i) => {
             const targetScale = 1 - (projects.length - i) * 0.05;
             return (
@@ -124,7 +124,7 @@ function Card({
   return (
     <div
       ref={container}
-      className="h-screen flex items-center justify-center sticky top-0 project-container"
+      className="min-h-[70vh] md:h-screen flex items-start md:items-center justify-center sticky top-0 project-container pt-10 md:pt-0"
     >
       <motion.div
         style={{
@@ -133,7 +133,7 @@ function Card({
           transform: `scale(var(--project-scale, 1))`,
           marginTop: "var(--project-margin, 0)",
         }}
-        className="relative -top-[25%] h-auto w-[90%] md:w-[85%] lg:w-[75%] xl:w-[65%] origin-top project-card"
+        className="relative md:-top-[25%] h-auto w-[90%] md:w-[85%] lg:w-[75%] xl:w-[65%] origin-top project-card"
         whileHover={{
           y: -8,
           transition: { duration: 0.3 },

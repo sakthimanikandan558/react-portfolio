@@ -89,7 +89,7 @@ export default function Contact() {
 
   return (
     <main
-      className="pt-20 lg:pt-[0rem] bg-[#04081A]
+      className="pt-0 md:pt-20 lg:pt-[0rem] bg-[#04081A]
  text-white min-h-screen"
     >
       <section className="hero min-h-screen flex items-center relative px-4 sm:px-6 lg:px-8">
@@ -141,7 +141,7 @@ export default function Contact() {
               {/* Social Media Links */}
               <div className="pt-4">
                 <h3 className="font-semibold text-lg mb-4">Connect with me</h3>
-                <div className="flex gap-4">
+                <div className="grid grid-cols-2 gap-4">
                   <a
                     href="https://www.linkedin.com/in/sakthi-manikandan"
                     target="_blank"
@@ -151,7 +151,7 @@ export default function Contact() {
                     <FaLinkedin className="w-6 h-6 text-blue-400 group-hover:text-blue-300 transition-colors" />
                     <div>
                       <p className="text-xs text-gray-400">LinkedIn</p>
-                      <p className="text-sm font-medium text-white">sakthi-manikandan</p>
+                      <p className="text-sm font-medium text-white">sakthimanikandan</p>
                     </div>
                   </a>
 

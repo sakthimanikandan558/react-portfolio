@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
     FaHome,
     FaLaptopCode,
@@ -39,15 +40,17 @@ export default function Header() {
         setActiveLink(id);
         setIsMenuOpen(false);
 
-        const element = document.getElementById(id);
-        if (element) {
-            const offset = 80;
-            const elementPosition = element.offsetTop - offset;
-            window.scrollTo({
-                top: elementPosition,
-                behavior: "smooth",
-            });
-        }
+        setTimeout(() => {
+            const element = document.getElementById(id);
+            if (element) {
+                const offset = 80;
+                const elementPosition = element.offsetTop - offset;
+                window.scrollTo({
+                    top: elementPosition,
+                    behavior: "smooth"
+                });
+            }
+        }, 300);
     };
 
     const navLinks = [
@@ -64,6 +67,7 @@ export default function Header() {
             <div className="md:fixed md:top-4 md:left-1/2 md:transform md:-translate-x-1/2 w-full md:w-auto">
                 <div className="p-[2px] md:rounded-full bg-gradient-to-r from-emerald-400 via-cyan-500 to-indigo-500 animate-gradient-x">
                     <nav className="bg-gray-900/90 backdrop-blur-md md:rounded-full px-4 md:px-6 py-2.5">
+
                         {/* Mobile Menu Button */}
                         <div className="flex justify-between items-center md:hidden px-2">
                             <button
@@ -80,21 +84,57 @@ export default function Header() {
                             </button>
                         </div>
 
-                        {/* Navigation Links */}
-                        <div className={`${isMenuOpen ? "block" : "hidden"} md:block`}>
-                            <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-1 lg:gap-2 py-4 md:py-0">
+                        {/* Mobile Navigation Links */}
+                        <AnimatePresence>
+                            {isMenuOpen && (
+                                <motion.div
+                                    initial={{ height: 0, opacity: 0 }}
+                                    animate={{ height: "auto", opacity: 1 }}
+                                    exit={{ height: 0, opacity: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="md:hidden overflow-hidden"
+                                >
+                                    <div className="flex flex-col gap-2 py-4">
+                                        {navLinks.map(({ id, icon: Icon, text }) => (
+                                            <button
+                                                key={id}
+                                                onClick={() => handleNavClick(id)}
+                                                className={`px-3 py-2 rounded-lg text-sm font-medium
+                                              transition-all duration-300 flex items-center gap-2
+                                              hover:bg-white/10 
+                                              ${activeLink === id
+                                                        ? "bg-white/15 text-white"
+                                                        : "text-gray-300 hover:text-white"
+                                                    }
+                                            `}
+                                            >
+                                                <Icon
+                                                    className={`text-base ${activeLink === id ? "scale-110" : ""
+                                                        }`}
+                                                />
+                                                <span className="inline">{text}</span>
+                                            </button>
+                                        ))}
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+
+                        {/* Desktop Navigation Links */}
+                        <div className="hidden md:block">
+                            <div className="flex flex-row items-center gap-1 lg:gap-2">
                                 {navLinks.map(({ id, icon: Icon, text }) => (
                                     <button
                                         key={id}
                                         onClick={() => handleNavClick(id)}
-                                        className={`px-3 py-2 md:py-1.5 rounded-lg md:rounded-full text-sm font-medium
-                      transition-all duration-300 flex items-center gap-2
-                      hover:bg-white/10 
-                      ${activeLink === id
+                                        className={`px-3 py-1.5 rounded-full text-sm font-medium
+                                      transition-all duration-300 flex items-center gap-2
+                                      hover:bg-white/10 
+                                      ${activeLink === id
                                                 ? "bg-white/15 text-white"
                                                 : "text-gray-300 hover:text-white"
                                             }
-                    `}
+                                    `}
                                     >
                                         <Icon
                                             className={`text-base ${activeLink === id ? "scale-110" : ""
